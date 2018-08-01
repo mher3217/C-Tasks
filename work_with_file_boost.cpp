@@ -13,7 +13,7 @@ int main(int argc, char* argv[])
 	std::vector<directory_entry> v; // To save the file names in a vector.
     int i = 0;
 	while (true) {
-		std::cout<< "Please insert\n ls(fail name)\t mkdir(new)\t rm(remove)\t new_direct(new directory)" << std::endl;
+		std::cout<< "Please insert\n ls(fail name)\t mkdir(new)\t rm(remove)\t new_direct(insert this C:\\Program Files)" << std::endl;
 		std::string a;
 		std::cin >> a;
 		std::cout << std::endl;
