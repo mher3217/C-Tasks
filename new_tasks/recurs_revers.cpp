@@ -3,7 +3,7 @@ const int Size = 5;
 
 
 void rec(int *p, int k, int e){
-  if (k > 2){
+  if (k >= (Size/2)){
     int tmp = *(p+e);
     *(p + e) = *(p + k);
     *(p + k) = tmp;    
