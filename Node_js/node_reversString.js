@@ -2,20 +2,19 @@ var fs = require("fs");
 
 var fileContent = fs.readFileSync("test_read.txt", "utf8");
 
-// var tmp_1 = fileContent.slice(0, 5);
-// var tmp_2 = fileContent.slice(22, 32);
-// fileContent = fileContent.substring(7, 19);
-// fileContent = tmp_2 + fileContent + tmp_1;
-// console.log(fileContent);
+var sub1 = fileContent.slice(0,fileContent.indexOf("\n"));
+var sub2 = fileContent.slice(fileContent.lastIndexOf("\n") );
+var fileContent = fileContent.slice(fileContent.indexOf("\n"),fileContent.lastIndexOf("\n" ));
 
+fileContent = sub2 + fileContent + "\n"+ sub1;
 fs.writeFile('mynewfile.txt', fileContent, function (err) {
   if (err) throw err;
-  console.log('////////////');
+  console.log('Saved!');
 });
 
-var file = fs.readFile("mynewfile.txt", "utf8",
+fs.readFile("mynewfile.txt", "utf8",
             function(error,data){
                 if(error) throw error;
                 console.log(data);
 });
-console.log(fileContent);
+//console.log(fileContent);
